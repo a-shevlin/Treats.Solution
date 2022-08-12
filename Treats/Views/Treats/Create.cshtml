@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Treats.Models.Treat;
+
+<h1>Add a Treat</h1>
+@using(Html.BeginForm())
+{
+  @Html.TextBoxFor(model => model.TreatName, new{@class = "form-control", placeholder = "Enter the Treat name Here", required = "required"})
+  <br>
+  @Html.TextBoxFor(model => model.Description, new{@class = "form-control", placeholder = "Enter a Description Here", required = "required"})
+  <br>
+  <input type="submit" value="Add Treat" class="htmlButton"/>
+}
+<hr>
+@Html.ActionLink("Return to Treats", "Index", "Treats", null, new { @class="htmlButton" })
+@Html.ActionLink("Return Home", "Index", "Home", null, new { @class="htmlButton" })

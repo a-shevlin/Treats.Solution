@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Treats.Models.Treat;
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.TreatId)
+
+  @Html.Label("Treat")
+  <br>
+  @Html.EditorFor(model => model.TreatName)
+  <br><br>
+  @Html.Label("Description")
+  <br>
+  @Html.EditorFor(model => model.Description)
+  <br><br>
+  <input type="submit" value="Save" class="htmlButton"/>
+}
+<hr>
+@Html.ActionLink("Return to Treat List", "Index", "Treats", null, new { @class="htmlButton" })
