@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@using System.Security.Claims
+
+<p style="color:red">@ViewBag.ErrorMesssage</p>
+@if (User.Identity.IsAuthenticated)
+{
+  <h3>Welcome @User.Identity.Name!</h3>
+  @Html.ActionLink("Log Out", "LogOff", "Account", null, new { @class="htmlButton centerBtn" })
+  @Html.ActionLink("Home", "Index", "Home", null, new { @class="htmlButton centerBtn" })
+}
+else
+{
+  @Html.ActionLink("Register", "Register", "Account", null, new { @class="htmlButton" })
+  @Html.ActionLink("Log in", "Login", "Account", null, new { @class="htmlButton" })
+}
