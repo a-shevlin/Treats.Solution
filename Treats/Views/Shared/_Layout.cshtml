@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>@ViewBag.PageTitle</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  </head>
+  <body>
+    <div id="">
+      <div class="jumbotron">
+        <h1 id="header"><img id="logo" src="~/img/TreatLogo.png"/>@Html.ActionLink("    Pierre's Sweet and Savory Treats", "Index", "Home")</h1>
+      </div>
+      <p class="centerBtn" id="indexBtn"> @Html.ActionLink("Flavor", "Index", "Flavor", null, new { @class="htmlButton"}) | @Html.ActionLink("Treat", "Index", "Treat", null, new { @class="htmlButton"})</p>
+      <div class="container">
+        <hr/>
+        <h3>@ViewBag.Header</h3>
+        <hr/>
+        @RenderBody()
+      </div>
+    </div>
+  </body>
+</html>
