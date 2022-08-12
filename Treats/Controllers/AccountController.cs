@@ -22,7 +22,7 @@ namespace Treats.Controllers
     public ActionResult Index()
     {
       ViewBag.PageTitle = ("Account Register");
-      ViewBag.Header = ("Would You Like to Register?");
+      ViewBag.Header = ("Account Registry");
       return View();
     }
 
