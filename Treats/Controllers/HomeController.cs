@@ -20,6 +20,8 @@ namespace Treats.Controllers
       dynamic model = new ExpandoObject();
       model.Treat = _db.Treats.ToList();
       model.Flavor = _db.Flavors.ToList();
+      ViewBag.PageTitle = ("Pierre's Treats");
+      ViewBag.Header = ("Welcome to Pierre's!");
       return View(model); 
     }
   }
