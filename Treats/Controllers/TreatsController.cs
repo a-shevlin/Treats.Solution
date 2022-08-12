@@ -21,12 +21,16 @@ namespace Treats.Controllers
     [AllowAnonymous]
     public ActionResult Index() 
     { 
+      ViewBag.PageTitle = ("Pierre's Treats");
+      ViewBag.Header = ("All Treat's");
       List<Treat> model = _db.Treats.ToList();
       return View(model); 
     }
 
     public ActionResult Create()
     {
+      ViewBag.PageTitle = ("Pierre's Treats");
+      ViewBag.Header = ("Create a Treat!");
       return View();
     }
 
@@ -45,6 +49,8 @@ namespace Treats.Controllers
         .Include(treat => treat.JoinEntities)
         .ThenInclude(join => join.Flavor)
         .FirstOrDefault(treat => treat.TreatId == id);
+      ViewBag.PageTitle = ("Treat Details");
+      ViewBag.Header = (@model.TreatName);
       return View(model);
     }
 
@@ -82,6 +88,8 @@ namespace Treats.Controllers
     public ActionResult Edit(int id)
     {
       var model = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
+      ViewBag.PageTitle = ("Edit Treat");
+      ViewBag.Header = ("Edit " + @model.TreatName);
       return View(model);
     }
 
@@ -96,11 +104,18 @@ namespace Treats.Controllers
     public ActionResult Delete(int id)
     {
       var model = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
+      ViewBag.PageTitle = ("Delete Treat");
+      ViewBag.Header = ("Are you sure you want to delete " + @model.TreatName + "?");
       return View(model);
     }
 
-    [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
+    {
+      return DeleteConfirmed(id);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id, string v)
     {
       var model = _db.Treats.FirstOrDefault(treat => treat.TreatId == id );
       _db.Treats.Remove(model);
