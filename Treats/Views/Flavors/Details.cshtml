@@ -1,0 +1,40 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Treats.Models.Flavor;
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>No treats associated with @Model.FlavorName</p>
+}
+else 
+{
+  <h3>Treats Available:</h3>
+  <table class="table table-bordered">
+    @foreach(var join in Model.JoinEntities)
+    {
+      <tr>
+        <td style="width:90%">
+          @Html.ActionLink($"{join.Treat.TreatName}", "Details", "Treats", new{id = join.Flavor.FlavorId})
+        </td>
+        <td style="width:10%">
+          @using (Html.BeginForm("DeleteFlavor", "Treats"))
+          {
+            @Html.Hidden("joinId", @join.TreatFlavorId)
+            @Html.Hidden("id", @Model.FlavorId)
+            <input type="submit" value="Remove from Flavor" class="htmlButton"/>
+          }
+        </td>
+      </tr>
+    }
+  </table>
+}
+<br>
+<br>
+@if(User.Identity.IsAuthenticated)
+{
+  @Html.ActionLink("Link a Flavor", "AddTreat", "Flavors", new { id = Model.FlavorId }, new { @class="htmlButton" })
+  @Html.ActionLink("Edit Flavor", "Edit", "Flavors", new { id = Model.FlavorId }, new { @class="htmlButton" })
+  @Html.ActionLink("Delete Flavor", "Delete", "Flavors",new { id = Model.FlavorId }, new { @class="htmlButton" })
+}

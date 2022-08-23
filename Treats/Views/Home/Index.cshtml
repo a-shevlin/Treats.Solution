@@ -7,12 +7,17 @@
 
 @if(!User.Identity.IsAuthenticated)
 {
-  <p style="color:red">Please login to access all features</p>
+  <div class="centerBtn">
+    <p style="color:red">Please login to access all features</p>
+    @Html.ActionLink("Login", "Index", "Account", null, new { @class="htmlButton" })
+  </div>
+  <br>
 }
 @if(@Model.Treat.Count == 0 && @Model.Flavor.Count == 0)
 {
   <br>
   <p>No Treats or Flavors Availible</p>
+
 }
 else
 {

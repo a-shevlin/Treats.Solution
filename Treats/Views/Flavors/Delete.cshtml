@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Treats.Models.Flavor;
+
+<p>This Action is permanent</p>
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete" class="htmlButton"/>
+}
+<hr>
+@Html.ActionLink("Return to Flavor List", "Index", "Flavors", null, new { @class="htmlButton"})

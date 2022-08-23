@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Treats.Models.Flavor;
+
+<h1>Add a Flavor</h1>
+@using(Html.BeginForm())
+{
+  @Html.TextBoxFor(model => model.FlavorName, new{@class = "form-control", placeholder = "Enter the Flavor name Here", required = "required"})
+  <br>
+  <input type="submit" value="Add Flavor" class="htmlButton"/>
+}
+<hr>
+@Html.ActionLink("Return to Flavors", "Index", "Flavors", null, new { @class="htmlButton" })
+@Html.ActionLink("Return Home", "Index", "Home", null, new { @class="htmlButton" })

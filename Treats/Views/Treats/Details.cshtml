@@ -16,7 +16,7 @@ else
     {
       <tr>
         <td style="width:90%">
-          @Html.ActionLink($"{join.Flavor.FlavorName}", "Details", "Machines", new{id = join.Flavor.FlavorId})
+          @Html.ActionLink($"{join.Flavor.FlavorName}", "Details", "Flavors", new{id = join.Flavor.FlavorId})
         </td>
         <td style="width:10%">
           @using (Html.BeginForm("DeleteFlavor", "Treats"))

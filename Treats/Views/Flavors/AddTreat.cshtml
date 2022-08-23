@@ -1,0 +1,46 @@
+@{
+  Layout="_Layout";
+}
+
+@model Treats.Models.Flavor
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.FlavorId)
+  <p>Treats: @Html.DropDownList("TreatId")</p>
+  <input type="submit" value="Add this Treat" class="htmlButton"/>
+  <br>
+  <br>
+}
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <h3>No Treats Are Assigned.</h3>
+}
+else
+{
+
+<br>
+<h3>Current @Model.FlavorName Treats:</h3>
+  <table class="table table-bordered" style="margin:auto; width:60% !important;">
+    @foreach(var join in Model.JoinEntities)
+    {
+      <tr>
+        <td>
+          @Html.ActionLink($"{join.Flavor.FlavorName}", "Details", "Treats", new{ id = join.Treat.TreatId })
+        </td>
+        <td style="width:10%">
+          @using (Html.BeginForm("DeleteTreat", "Flavors"))
+          {
+            @Html.Hidden("joinId", @join.TreatFlavorId)
+            @Html.Hidden("id", @Model.FlavorId)
+            <input type="submit" value="Remove Treat"class="htmlButton"/>
+          }
+        </td>
+      </tr>
+    }
+  </table>
+}
+
+<hr>
+@Html.ActionLink("Return to Flavor", "Details", "Flavors", new { id = @Model.FlavorId })

@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Treats.Models.Flavor;
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.FlavorId)
+
+  <p>Flavor: @Html.EditorFor(model => model.FlavorName)</p>
+  <input type="submit" value="Save" class="htmlButton"/>
+}
+<hr>
+@Html.ActionLink("Return to Flavor List", "Index", "Flavors", null, new { @class="htmlButton" })

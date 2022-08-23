@@ -13,6 +13,8 @@
 }
 else
 {
-  @Html.ActionLink("Register", "Register", "Account", null, new { @class="htmlButton" })
-  @Html.ActionLink("Log in", "Login", "Account", null, new { @class="htmlButton" })
+  <div class="centerBtn">
+    @Html.ActionLink("Register", "Register", "Account", null, new { @class="htmlButton" })
+    @Html.ActionLink("Log in", "Login", "Account", null, new { @class="htmlButton" })
+  </div>
 }
