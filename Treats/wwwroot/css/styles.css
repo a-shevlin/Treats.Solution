@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body {
+  background-color: #FDD8DA;
+}
+
+input {
+  border: 0px;
+}
+
+.jumbotron {
+  font-family: 'Fredoka One', cursive;
+  height: max-content;
+  text-align: center;
+  background: none;
+  padding: 20px;
+  padding-top: 50px;
+}
+
+.jumbotron h1 {
+  text-transform: uppercase;
+  color: #000000;
+  text-shadow: 2px 4px #FBA8AC;
+  font-weight: 500;
+}
+
+.jumbotron a {
+    color: #F3F9F9;
+    font-weight: 500;
+}
+
+hr {
+  background-color: #000000;
+  box-shadow: 1px 1px #FBA8AC, 2px 2px #FBA8AC;
+}
+
+li a {
+  color: #fac15a;  
+  font-weight: 600;
+}
+
+li a:hover {
+  color: #FDD8DA;
+  text-shadow: 1px 1px #fac15a, -1px -1px #fac15a, 0px 1px #fac15a, 1px 0px #fac15a, 0px -1px #fac15a, -1px 0px #fac15a, 1px -1px #fac15a,  -1px 1px #fac15a;
+}
+
+.container {
+  height: fit-content;
+  width: fit-content;
+  min-width: 500px;
+  padding: 40px;
+  background-color: #FEF5F6;
+  border-radius: 10px;
+  transform: translateY(-25px);
+  animation: box-shadow 1.25s linear infinite;
+}
+
+.container h3 {
+  font-family: 'Fredoka One', cursive;
+  text-transform: uppercase;
+  color: #000000;
+  text-shadow: 2px 2px #FBA8AC;
+}
+
+@keyframes box-shadow {
+  from, 24.9% {
+    box-shadow:2px 4px #ffbbbf, 6px 10px #FBA8AC, 10px 16px #fd868e,  14px 22px #f16f78;
+  }
+  25%, 49.9%
+  {
+    box-shadow:2px 4px #f16f78, 6px 10px #ffbbbf, 10px 16px #FBA8AC,  14px 22px #fd868e;
+  }
+  50%, 74.9% {
+    box-shadow:2px 4px #fd868e, 6px 10px #f16f78, 10px 16px #ffbbbf,  14px 22px #FBA8AC;
+  }
+  75%, to {
+    box-shadow:2px 4px #FBA8AC, 6px 10px #fd868e, 10px 16px #f16f78,  14px 22px #ffbbbf;
+  }
+}
+
+.centerBtn {
+  text-align: center;
+}
+
+.rightBtn {
+  text-align: right;
+}
+
+.htmlButton {
+  background-color: #fac15a;
+  border-radius: 4px;
+  margin: 4px;
+  padding: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: max-content;
+  text-align: center;
+  text-transform: uppercase;
+  color: #F3F9F9;
+  font-weight: 700;
+  box-shadow: 2px 5px #FBA8AC;
+}
+
+.htmlButton:hover {
+  color: #FDD8DA;
+  text-decoration: none;
+}
+
+.htmlButton:active {
+  box-shadow: 2px 2px #FBA8AC;
+  transform: perspective(90%) translateZ(-1em);
+}
+
+#logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+label {
+  color: #000000;
+  font-weight: 600;
+}
+
+#header a, a:hover, a:focus, a:active {
+	text-decoration: none;
+	color: inherit;
+}
+
+.textBox {
+  background-color: #F3F9F9;
+  color: #c06e72;
+}
+
+.textBox:focus {
+  outline: solid 2px #87D4D4;
+  border-radius: 5px;
+  color: #c06e72;
+}
+
+.textBox:-webkit-autofill,
+.textBox:-webkit-autofill:hover, 
+.textBox:-webkit-autofill:focus, 
+.textBox:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #F3F9F9 inset !important;
+    box-shadow: 0 0 0 30px #F3F9F9 inset !important;
+    color: inherit;
+}
+
+#indexBtn {
+  transform: translateY(-40px);
+}
+
+h6 {
+  font-family: 'Fredoka One', cursive;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+h6 a {
+  color: #fac15a;  
+  font-weight: 400;
+  text-shadow: none;
+}
+
+h6 a:hover {
+  color: #FDD8DA;
+  text-shadow: 1px 1px #fac15a, -1px -1px #fac15a, 0px 1px #fac15a, 1px 0px #fac15a, 0px -1px #fac15a, -1px 0px #fac15a, 1px -1px #fac15a,  -1px 1px #fac15a;
+}
+
+td {
+  text-transform: uppercase;
+  color: #000000;
+}
+
+td a {
+  color: #fac15a;  
+  font-weight: 400;
+  text-shadow: none;
+}
+
+td a:hover {
+  color: #FDD8DA;
+  text-shadow: 1px 1px #fac15a, -1px -1px #fac15a, 0px 1px #fac15a, 1px 0px #fac15a, 0px -1px #fac15a, -1px 0px #fac15a, 1px -1px #fac15a,  -1px 1px #fac15a;
+}
